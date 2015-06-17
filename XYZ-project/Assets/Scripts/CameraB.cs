@@ -1,13 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NewBehaviourScript : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
+public class CameraB : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		transform.parent = Camera.main.transform;
