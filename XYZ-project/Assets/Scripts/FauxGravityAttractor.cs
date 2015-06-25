@@ -8,6 +8,9 @@ public class FauxGravityAttractor : MonoBehaviour {
 	public float dist = 0;
 	private Transform body = null;
 
+
+
+
 	public void Update(){
 	GameObject other = GameObject.FindGameObjectWithTag ("Player");
 		body = other.transform;
@@ -23,7 +26,5 @@ public class FauxGravityAttractor : MonoBehaviour {
 			Quaternion targetRotation = Quaternion.FromToRotation (localUp, gravityUp) * body.rotation;
 			body.rotation = Quaternion.Slerp (body.rotation, targetRotation, 50f * Time.deltaTime);
 		}
-
 	}
-
 }

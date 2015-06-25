@@ -9,6 +9,8 @@ public class Movement : MonoBehaviour {
 
 
 
+
+
 	public void moveRightDown(){
 		moveH = 1*maxSpeed;
 	}
@@ -36,5 +38,8 @@ public class Movement : MonoBehaviour {
 	void Update(){
 		transform.GetComponent<Rigidbody2D> ().AddForce(Vector3.right*moveH);
 		transform.GetComponent<Rigidbody2D> ().AddForce(Vector3.up*moveV);
+
+
 		}
+	
 }
