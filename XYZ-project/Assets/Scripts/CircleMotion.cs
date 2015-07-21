@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CircleMotion : MonoBehaviour {
 	public float gravityField = 0;
-	public float gravityFieldCounter = 0;
+	public float gravityCounter = 0;
 	public float angle = 0;
 	public float radian = 0;
 	public float timeCounter = 0;
@@ -17,21 +17,22 @@ public class CircleMotion : MonoBehaviour {
 	void Update () {
 		GameObject player = GameObject.FindGameObjectWithTag ("Player");
 
+		PlayerMovement playerMovement = player.GetComponent<PlayerMovement> ();
+		gravityCounter = playerMovement.gravityFieldCounter;
 
-
-		if (gravityField >= Vector2.Distance (player.transform.position, transform.position) && gravityFieldCounter <= 0 ) {
-			gravityFieldCounter = 0;
+		if (gravityField >= Vector2.Distance (player.transform.position, transform.position) && gravityCounter <= 0 ) {
+			gravityCounter = 0;
 			Circle ();
 		}
 		if (Input.GetKeyDown (KeyCode.Space)) {
-			gravityFieldCounter = 1;
+			gravityCounter = 1;
 		}
-		if (gravityField < Vector2.Distance (player.transform.position, transform.position) || gravityFieldCounter > 0) {
+		if (gravityField < Vector2.Distance (player.transform.position, transform.position) || gravityCounter > 0) {
 			player.transform.position += lastDir;
 			Angle ();
 		}
-		if (gravityFieldCounter > 0) {
-			gravityFieldCounter -= Time.deltaTime;
+		if (gravityCounter > 0) {
+			gravityCounter -= Time.deltaTime;
 			}
 	}
 
