@@ -2,13 +2,33 @@
 using System.Collections;
 
 public class CameraFollow : MonoBehaviour {
-	public GameObject target;
-	public float xOffset = 0;
-	public float yOffset = 0;
-	public float zOffset = 0;
+	public float cameraSpeed;
+	public GameObject closestPlanet;
 
-	void LateUpdate() {
-		this.transform.position = new Vector3 (target.transform.position.x + xOffset,target.transform.position.y + yOffset,
-		                                       target.transform.position.z + zOffset);
+	public float offsetZ = 0;
+
+	void Update() {
+		GameObject [] planets = GameObject.FindGameObjectsWithTag ("Planet");
+		GameObject player = GameObject.FindGameObjectWithTag ("Player");
+
+		float minDist = Mathf.Infinity;
+		Vector3 currentPos = player.transform.position;
+		GameObject tMin = null;
+
+		foreach (GameObject p in planets) {
+
+			float dist = Vector3.Distance(p.transform.position, currentPos);
+			if(dist < minDist){
+
+				tMin = p;
+				minDist = dist;
+			}
+		}
+
+		Vector3 direction =  new Vector3 ( tMin.transform.position.x, tMin.transform.position.y, -10);
+
+		transform.position = Vector3.MoveTowards (transform.position, direction, cameraSpeed);
+
+
 	}
 }

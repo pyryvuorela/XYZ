@@ -39,7 +39,6 @@ public class CircleMotion : MonoBehaviour {
 	void Circle ()
 	{
 		GameObject player = GameObject.FindGameObjectWithTag ("Player");
-
 		timeCounter += Time.deltaTime;
 		
 		float x = Mathf.Cos (timeCounter) * (gravityField - 2);
