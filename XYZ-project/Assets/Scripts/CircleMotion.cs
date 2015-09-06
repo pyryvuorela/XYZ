@@ -4,17 +4,14 @@ using System.Collections;
 public class CircleMotion : MonoBehaviour {
 	public float gravityField = 0;
 	public float gravityCounter = 0;
-	public float angle = 0;
-	public float radian = 0;
-	public float timeCounter = 0;
-	public Vector3 lastDir;
+	float angle = 0;
+	float radian = 0;
+	float timeCounter = 0;
+	Vector3 lastDir;
 
-	void Start (){
-
-
-	}
 
 	void Update () {
+
 		GameObject player = GameObject.FindGameObjectWithTag ("Player");
 
 		PlayerMovement playerMovement = player.GetComponent<PlayerMovement> ();
@@ -34,6 +31,7 @@ public class CircleMotion : MonoBehaviour {
 		if (gravityCounter > 0) {
 			gravityCounter -= Time.deltaTime;
 			}
+
 	}
 
 	void Circle ()
