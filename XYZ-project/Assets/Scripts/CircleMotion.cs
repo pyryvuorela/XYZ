@@ -4,11 +4,15 @@ using System.Collections;
 public class CircleMotion : MonoBehaviour {
 	public float gravityField = 0;
 	public float gravityCounter = 0;
+	public float rotationSpeed = 0;
 	float angle = 0;
 	float radian = 0;
 	float timeCounter = 0;
 	Vector3 lastDir;
 
+	void Start(){
+		//rotationSpeed = Random.Range (-10, 10);
+	}
 
 	void Update () {
 
@@ -31,6 +35,7 @@ public class CircleMotion : MonoBehaviour {
 		if (gravityCounter > 0) {
 			gravityCounter -= Time.deltaTime;
 			}
+		TinyDetails ();
 
 	}
 
@@ -61,5 +66,10 @@ public class CircleMotion : MonoBehaviour {
 		if (player.transform.position.y < transform.position.y) {
 			timeCounter = Mathf.PI + (Mathf.PI- radian);
 		}
+	}
+
+	void TinyDetails ()	{
+		//transform.Rotate (Vector3.forward * Time.deltaTime*rotationSpeed);
+
 	}
 }

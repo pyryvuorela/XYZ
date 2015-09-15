@@ -1,0 +1,50 @@
+Stuff neew to do 101:
+
+
+	Käyttäytyminen planeettojen kohdalla:
+		- molempiin suuntiin pyöriminen
+		- AddForce(liikkuminen smooth)
+			asettuminen kiertoradalle	
+		- Kaukana olevat planeetat vaikuttais kurssiin ottamatta kuitenkaan kiertoradalle
+		- kameran liikkuminen(seuraa pelajaa kun ei gravitaatiossa), kaksi sormea kameran liikkuttaa kameraa vähän, nappi näkee kartan tämän hetkisenä
+
+
+
+	
+
+	Pienet aspektit
+		- Planeetat eri atribuutteja
+		- kentät liikkuvat
+		- liikkuvia komponentteja
+		- 
+
+
+
+
+	Tarina/Goal
+		- Miksi lähtee pois maasta? Minne menossa?
+		- Päähenkilö
+			Laika-Koira
+		- Lähtee pois maasta kuulennolle, kylmä sota perkelöityy ja maa posahtaa. Laika lähtee etsimään 
+		  asumiskelpoista planeettaa 
+
+		Tutoriaalikenttä
+			Lähtö maasta kuuhun, pelimekaniikan treenaus. Kun pääsee kuuhun niin maa posahtaa.
+
+		Väliskenet
+
+
+
+
+		
+
+
+
+
+
+
+	Upgrades?
+		- apuvälineitä?
+
+	ampuminen? 
+		
