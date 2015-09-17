@@ -2,7 +2,7 @@ Stuff neew to do 101:
 
 
 	K‰ytt‰ytyminen planeettojen kohdalla:
-		- molempiin suuntiin pyˆriminen
+
 		- AddForce(liikkuminen smooth)
 			asettuminen kiertoradalle	
 		- Kaukana olevat planeetat vaikuttais kurssiin ottamatta kuitenkaan kiertoradalle
@@ -13,38 +13,58 @@ Stuff neew to do 101:
 	
 
 	Pienet aspektit
+
 		- Planeetat eri atribuutteja
 		- kent‰t liikkuvat
 		- liikkuvia komponentteja
-		- 
-
-
 
 
 	Tarina/Goal
-		- Miksi l‰htee pois maasta? Minne menossa?
+
 		- P‰‰henkilˆ
 			Laika-Koira
-		- L‰htee pois maasta kuulennolle, kylm‰ sota perkelˆityy ja maa posahtaa. Laika l‰htee etsim‰‰n 
-		  asumiskelpoista planeettaa 
+
+		- Kylm‰ sota:
+			NL teki ydin testej‰ -> ydinohjuskoe perkelˆytyi -> ydinohjus ammuttiin avaruuteen jossa sen kurssi muuttui kohti maata
+			-> laika l‰hetet‰‰n purkamaan ohjusta(its a fucking dog)			
+
+			-> Maapallo r‰j‰ht‰‰ - Tˆn‰isee laikan kuuhun (sek‰ ydinpommin[t‰rke‰‰ juonen kannalta]). P‰‰tt‰ asuttua asumaan kuuhun.
+
+			-> Roinaa lent‰‰ kuun ohi(mm. paloposti, koiran koppi, koiran ruokaa, kissa)
+ 
+			-> Hakee t‰rke‰t objektit takaisin kuuhun (jaksottuu esim. viiden kent‰n osioihin joissa jokaisessa haetaan eri objekti)
+
+			-> Matkan varrella tˆrm‰‰ useasti avaruusoraviin(itse perkeleet) - Lopussa huomaa avaruusoravien asuttaneen kuun
+
+			-> R‰j‰ytt‰‰ kuun- THE END
+
+
 
 		Tutoriaalikentt‰
-			L‰htˆ maasta kuuhun, pelimekaniikan treenaus. Kun p‰‰see kuuhun niin maa posahtaa.
+			INTRO toimii tutoriaalina ennen varsinaista peliosuutta
+			- L‰htˆ maasta kuuhun, pelimekaniikan treenaus.
 
-		V‰liskenet
+	
 
+		Taso/planeetta variaatioita
 
-
-
+		Osien v‰liss‰ sek‰ INTRO ja OUTRO osuuksissa v‰li skenej‰ joissa kertoja sek‰ kuvia. 
 		
-
-
-
-
-
-
-	Upgrades?
-		- apuv‰lineit‰?
-
-	ampuminen? 
+		INTRO: L‰htˆ kuuhun
 		
+		1. Paloposti -> kuselle
+
+		2. Koiranruokaa -> n‰lk‰
+
+		3. Purulelu
+
+		4. Koirantossut
+		
+		5. Koirankoppi -> Koti valmis
+
+		OUTRO:	Avaruusoravat vallanneet kuun(Ovat esiintyneet vaivihkaa taustalla koko tarinan ajan)
+			-> Ongelma ratkaistaan Kuun kiertoralla olevalla ydinpommilla
+			->> Kuu R‰j‰ht‰‰
+
+		The ENd		
+
