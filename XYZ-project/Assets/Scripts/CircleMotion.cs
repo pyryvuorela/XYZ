@@ -31,7 +31,7 @@ public class CircleMotion : MonoBehaviour {
 			Circle ();
 		}
 		if (gravityField < Vector2.Distance (player.transform.position, transform.position) || gravityCounter > 0) {
-			player.transform.position += lastDir;
+			player.transform.Translate(lastDir);
 			Angle ();
 		}
 		if (gravityCounter > 0) {
@@ -39,6 +39,9 @@ public class CircleMotion : MonoBehaviour {
 			isInGravityField = false;
 			rotationSpeed = 1;
 			}
+		if (gravityEffectField > Vector2.Distance (player.transform.position, transform.position) && gravityField < Vector2.Distance (player.transform.position, transform.position) && gravityCounter <= 0 ) {
+			player.transform.position = Vector2.MoveTowards(player.transform.position, transform.position, gravityEffectField*Time.deltaTime);
+		}
 	}
 
 	void Circle ()
@@ -81,6 +84,7 @@ public class CircleMotion : MonoBehaviour {
 
 		if (player.transform.position.y > transform.position.y) {
 			timeCounter = radian;
+
 		}
 		if (player.transform.position.y < transform.position.y) {
 			timeCounter = Mathf.PI + (Mathf.PI- radian);

@@ -14,9 +14,10 @@ public class CameraFollow : MonoBehaviour {
 	}
 
 	void cameraFollowClosestPlanet (){
-
+	
 		GameObject[] planets = GameObject.FindGameObjectsWithTag ("Planet");
 		GameObject player = GameObject.FindGameObjectWithTag ("Player");
+
 		
 		float minDist = Mathf.Infinity;
 		Vector3 currentPos = player.transform.position;
