@@ -12,7 +12,8 @@ public class CircleMotion : MonoBehaviour {
 	float gravityCounter = 0;
 	float rotationAngle = 0;
 	float temporaryRotationAngle = 0;
-	bool isInGravityField = false;
+	public bool isInGravityField = false;
+	bool firstTimeInGravity = false;
 
 
 	void Update () {
@@ -28,6 +29,10 @@ public class CircleMotion : MonoBehaviour {
 		}
 		if (gravityField >= Vector2.Distance (player.transform.position, transform.position) && gravityCounter <= 0 ) {
 			gravityCounter = 0;
+			isInGravityField= true;
+
+		}
+		if (isInGravityField) {
 			Circle ();
 		}
 		if (gravityField < Vector2.Distance (player.transform.position, transform.position) || gravityCounter > 0) {
@@ -37,7 +42,8 @@ public class CircleMotion : MonoBehaviour {
 		if (gravityCounter > 0) {
 			gravityCounter -= Time.deltaTime;
 			isInGravityField = false;
-			rotationSpeed = 1;
+			firstTimeInGravity = false;
+			rotationSpeed = Mathf.Abs(rotationSpeed);
 			}
 		if (gravityEffectField > Vector2.Distance (player.transform.position, transform.position) && gravityField < Vector2.Distance (player.transform.position, transform.position) && gravityCounter <= 0 ) {
 			player.transform.position = Vector2.MoveTowards(player.transform.position, transform.position, gravityEffectField*Time.deltaTime);
@@ -46,22 +52,23 @@ public class CircleMotion : MonoBehaviour {
 
 	void Circle ()
 	{
+
 		GameObject player = GameObject.FindGameObjectWithTag ("Player");
 
-		if (isInGravityField == false) {
+		if (firstTimeInGravity == false) {
 			if (temporaryRotationAngle < rotationAngle && player.transform.position.x < transform.position.x) {
-				rotationSpeed *= 1;
+				rotationSpeed = rotationSpeed*1;
 			} 
 			if (temporaryRotationAngle > rotationAngle && player.transform.position.x < transform.position.x) {
-				rotationSpeed *= -1;
+				rotationSpeed = rotationSpeed*-1;
 			} 
 			if (temporaryRotationAngle > rotationAngle && player.transform.position.x > transform.position.x) {
-				rotationSpeed *= 1;
+				rotationSpeed = rotationSpeed* 1;
 			} 
 			if (temporaryRotationAngle < rotationAngle && player.transform.position.x > transform.position.x) {
-				rotationSpeed *= -1;
+				rotationSpeed = rotationSpeed *-1;
 			} 
-			isInGravityField= true;
+			firstTimeInGravity = true;
 		}
 
 		timeCounter += Time.deltaTime * rotationSpeed;

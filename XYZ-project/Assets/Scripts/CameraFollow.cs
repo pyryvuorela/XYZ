@@ -5,10 +5,10 @@ public class CameraFollow : MonoBehaviour {
 
 	public float cameraSpeed;
 	public GameObject closestPlanet;
-	public float offsetZ = 0;
+	public float offsetZ = -10;
+	bool isInGravity;
 
 	void Update() {
-
 		cameraFollowClosestPlanet ();
 	
 	}
@@ -22,18 +22,23 @@ public class CameraFollow : MonoBehaviour {
 		float minDist = Mathf.Infinity;
 		Vector3 currentPos = player.transform.position;
 		GameObject tMin = null;
-		
-		foreach (GameObject p in planets) {
-			
-			float dist = Vector3.Distance(p.transform.position, currentPos);
-			if(dist < minDist){
-				tMin = p;
-				minDist = dist;
-			}
-		}
-		
-		Vector3 direction =  new Vector3 ( tMin.transform.position.x, tMin.transform.position.y, -10);
-		transform.position = Vector3.MoveTowards (transform.position, direction, cameraSpeed);
 
+
+			foreach (GameObject p in planets) {
+			
+				float dist = Vector3.Distance (p.transform.position, currentPos);
+				if (dist < minDist) {
+					tMin = p;
+					minDist = dist;
+				}
+			}
+		if(tMin.GetComponent<CircleMotion>().isInGravityField){
+			Vector3 direction = new Vector3 (tMin.transform.position.x, tMin.transform.position.y, offsetZ);
+			transform.position = Vector3.MoveTowards (transform.position, direction, cameraSpeed);
+	}else {
+			Vector3 direction = new Vector3 (player.transform.position.x, player.transform.position.y, offsetZ);
+			transform.position = Vector3.MoveTowards(transform.position, direction,cameraSpeed);
 	}
 }
+}
+
