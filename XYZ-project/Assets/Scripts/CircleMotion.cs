@@ -16,7 +16,7 @@ public class CircleMotion : MonoBehaviour {
 	bool firstTimeInGravity = false;
 
 
-	void Update () {
+	void FixedUpdate () {
 
 		GameObject player = GameObject.FindGameObjectWithTag ("Player");
 		PlayerMovement playerMovement = player.GetComponent<PlayerMovement> ();

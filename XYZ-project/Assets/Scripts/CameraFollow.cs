@@ -8,7 +8,7 @@ public class CameraFollow : MonoBehaviour {
 	public float offsetZ = -10;
 	bool isInGravity;
 
-	void Update() {
+	void FixedUpdate() {
 		cameraFollowClosestPlanet ();
 	
 	}
