@@ -8,7 +8,7 @@ public class GameControl : MonoBehaviour {
 
 	public static GameControl control;
 
-	private bool videoPolicy;
+	public bool videoPolicy;
 
 	void Awake () {
 		if (control == null) {
@@ -17,12 +17,6 @@ public class GameControl : MonoBehaviour {
 		} else if (control != this) {
 			Destroy (gameObject);
 		}
-	}
-	void setVideoPolicy(bool v){
-		this.videoPolicy = v;
-	}
-	public bool getVideoPolicy(bool v){
-		return videoPolicy;
 	}
 	public void Save(){
 

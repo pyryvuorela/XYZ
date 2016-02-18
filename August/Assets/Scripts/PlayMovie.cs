@@ -9,13 +9,15 @@ public class PlayMovie : MonoBehaviour {
     private AudioSource audio;
 
 	void Start () {
-        GetComponent<RawImage>().texture = movie as MovieTexture;
-        audio = GetComponent<AudioSource>();
-        audio.clip = movie.audioClip;
-        movie.Play();
-        audio.Play();
-	}
-	
+		GameControl.control.videoPolicy = true;
+		if (GameControl.control.videoPolicy == true) {
+			GetComponent<RawImage> ().texture = movie as MovieTexture;
+			audio = GetComponent<AudioSource> ();
+			audio.clip = movie.audioClip;
+			movie.Play ();
+			audio.Play ();
+		}
+	}	
 
 	void Update () {
 	
