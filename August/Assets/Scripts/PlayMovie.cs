@@ -7,7 +7,7 @@ public class PlayMovie : MonoBehaviour
 {
     void Start()
     {
-
+        GetComponent<AudioSource>().Play();
     }
 }
 
