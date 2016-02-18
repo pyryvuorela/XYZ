@@ -26,4 +26,11 @@ public class PlayerScript : MonoBehaviour {
 	void OnCollisionExit(Collision collision){
 		isGrounded = false;
 	}
+    public void playerJump()
+    {
+        if (isGrounded == true) {
+            GetComponent<Rigidbody>().AddForce(Vector3.up * JumpForce);
+            isGrounded = false;
+        }
+    }
 }
