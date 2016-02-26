@@ -5,31 +5,36 @@ public class PlayerScript : MonoBehaviour {
 	public int PlayerSpeed; 
 	public int JumpForce;
 	private bool isGrounded;
-	// Use this for initialization
-	void Start () {
+    private Animator anim;
+    private Vector2 playerMove;
+    // Use this for initialization
+    void Start () {
 		isGrounded = false;
+        anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		transform.Translate (Vector3.right * PlayerSpeed * Time.deltaTime);
+        transform.Translate(Vector2.right * PlayerSpeed * Time.deltaTime);
 
-		if(Input.GetKeyDown("space") && isGrounded == true){
-			GetComponent<Rigidbody> ().AddForce (Vector3.up * JumpForce);
+        anim.SetBool("Jump", isGrounded);
+
+        if (Input.GetKeyDown("space") && isGrounded == true){
+			GetComponent<Rigidbody2D> ().AddForce (Vector2.up * JumpForce);
 			isGrounded = false;
 	}
 }
-	void OnCollisionEnter(Collision collision){
+	void OnCollisionEnter2D(Collision2D collision){
 		if(collision.gameObject.tag == "Ground")
 		isGrounded = true;
 	}
-	void OnCollisionExit(Collision collision){
+	void OnCollisionExit2D(Collision2D collision){
 		isGrounded = false;
 	}
     public void playerJump()
     {
         if (isGrounded == true) {
-            GetComponent<Rigidbody>().AddForce(Vector3.up * JumpForce);
+            GetComponent<Rigidbody2D>().AddForce(Vector2.up * JumpForce);
             isGrounded = false;
         }
     }

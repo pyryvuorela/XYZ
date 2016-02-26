@@ -1,13 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EndLevel : MonoBehaviour {
+public class EndLevel : MonoBehaviour
+{
 
-    void OnTriggerEnter(Collider collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.tag == "Player")
+
+        if (other.gameObject.tag == "Player")
+        {
             GameControl.control.videoPolicy = true;
             GameControl.control.Save();
-            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+        }
     }
 }
